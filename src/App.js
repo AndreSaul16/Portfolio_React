@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Contacto from './components/contact/Contacto';
+import Home from './components/Index';
+import Portfolio from './components/portfolio/Portfolio';
+import resum2 from './components/resume/resum2';
+import Resume from './components/resume/Resume';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return (<>
+    <CssBaseline />
+    <BrowserRouter>
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/resume' exact component={Resume} />
+        <Route path='/portafolio' exact component={Portfolio} />
+        <Route path='/contacto' exact component={Contacto} />
+        <Route path='/linkedin' component={() => {
+          window.location.href = 'https://www.linkedin.com/in/saul-briceño';
+        }} />
+        <Route path='/github' component={() => {
+          window.location.href = 'https://github.com/AndreSaul16';
+        }} />
+      </Switch>
+    </BrowserRouter>
+  </>);
 }
 
 export default App;
