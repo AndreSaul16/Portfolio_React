@@ -1,7 +1,6 @@
 import React from 'react'
 import { makeStyles, withStyles } from '@material-ui/styles'
 import {
-    textField,
     Typography,
     Button,
     Grid,
@@ -9,7 +8,10 @@ import {
 } from '@material-ui/core'
 import SendIcon from '@material-ui/icons/Send';
 import Navbar from '../Navbar';
+import emailjs from 'emailjs-com';
 
+
+//------------> STYLES <--------------
 const useStyles = makeStyles(theme => ({
     form: {
         top: '50%',
@@ -23,7 +25,6 @@ const useStyles = makeStyles(theme => ({
         borderColor: 'tomato'
     }
 }))
-
 const InputField = withStyles({
     root: {
         '& label.Mui-focused': {
@@ -46,8 +47,32 @@ const InputField = withStyles({
     },
 })(TextField);
 
+
+//------------> COMPONENT <--------------
 function Contact() {
     const classes = useStyles();
+    const [user, setUser] = React.useState({
+        user_name: '',
+        message: '',
+        user_email: '',
+        company_name: ''
+    })
+
+
+//------------> FUNCTION FOR SEND <-----------------------------------------
+function sendEmail(e) {                                                   //-
+    e.preventDefault();                                                   //-
+                                                                          //-
+    emailjs.send('service_o0njyq4', 'template_2rciqwi', user,'user_n3iAFY4p6zW79Y8e53HSo')        //-
+      .then((result) => {                                                 //-
+          console.log(result.text);                                       //-
+      }, (error) => {                                                     //-
+          console.log(error.text);                                        //-
+      });                                                                 //-
+  }                                                                       //-
+//--------------------------------------------------------------------------
+
+
     return (<>
         <Navbar />
         <Box component='div'>
@@ -59,29 +84,48 @@ function Contact() {
                     <InputField
                         fullWidth={true}
                         label='Name' variant='outlined'
+                        name='user_name'
                         margin='dense'
                         inputProps={{ style: { color: 'white' } }}
                         size='medium'
+                        onChange={(event) => setUser({...user, user_name: event.target.value })}
+                        required
                     />
                     <br />
                     <InputField
                         fullWidth={true}
                         label='Email' variant='outlined'
+                        name='user_email'
                         margin='dense'
                         inputProps={{ style: { color: 'white' } }}
                         size='medium'
+                        onChange={(event) => setUser({...user, user_email: event.target.value })}
+                        required
                     />
                     <br />
                     <InputField
                         fullWidth={true}
                         label='Company Name' variant='outlined'
+                        name='company_name'
                         margin='dense'
                         inputProps={{ style: { color: 'white' } }}
+                        onChange={(event) => setUser({ ...user, company_name: event.target.value })}
                         size='medium'
                     />
                     <br />
+                    <InputField
+                        fullWidth={true}
+                        label='Message' variant='outlined'
+                        name='message'
+                        multiline
+                        margin='dense'
+                        inputProps={{ style: { color: 'white' } }}
+                        onChange={(event) => setUser({...user, message: event.target.value })}
+                        size='medium'
+                    />
+                    <br/>
                     <Button variant='outlined' fullWidth={true} endIcon={<SendIcon/>}
-                    className={classes.button}>
+                    className={classes.button} onClick={sendEmail}>
                         Send
                     </Button>
                 </Box>
