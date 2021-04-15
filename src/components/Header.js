@@ -18,10 +18,12 @@ const useStyles = makeStyles(theme => ({
         margin: theme.spacing(1)
     },
     tittle: {
-        color: 'tomato'
+        color: '#57C4A8',
+        textShadow: '2px 2px 2px #1E2328',
     },
     subtittle: {
-        color: 'tan',
+        color: 'white',
+        textShadow: '2px 2px 2px #1E2328',
         marginBottom: '3rem'
     },
     typedConainer: {
@@ -42,11 +44,11 @@ const Header = () => {
             <Grid container justify='center'>
             <Avatar className={classes.avatar} src={avatar} alt="avatar de saul" />
             </Grid>
-            <Typography variant="h4" className={classes.tittle}>
+            <Typography variant="h1" className={classes.tittle}>
             <Typed strings={["Saúl Briceño"]} />
             </Typography>
             <br/>
-            <Typography variant="h4" className={classes.subtittle}>
+            <Typography variant="h3" className={classes.subtittle}>
             <Typed strings={["Front-End Developer", "Back-End Developer", "Full Stack Developer"]} 
             typeSpeed={50} backSpeed={70} loop
             />

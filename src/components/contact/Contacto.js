@@ -59,27 +59,27 @@ function Contact() {
     })
 
 
-//------------> FUNCTION FOR SEND <-----------------------------------------
-function sendEmail(e) {                                                   //-
-    e.preventDefault();                                                   //-
-                                                                          //-
-    emailjs.send('service_o0njyq4', 'template_2rciqwi', user,'user_n3iAFY4p6zW79Y8e53HSo')        //-
-      .then((result) => {                                                 //-
-          console.log(result.text);                                       //-
-      }, (error) => {                                                     //-
-          console.log(error.text);                                        //-
-      });                                                                 //-
-  }                                                                       //-
-//--------------------------------------------------------------------------
+    //------------> FUNCTION FOR SEND <---------
+    let sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.send('service_o0njyq4', 'template_2rciqwi', user, 'user_n3iAFY4p6zW79Y8e53HSo')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
 
 
+    //------------> RETURN COMPONENT <---------
     return (<>
         <Navbar />
         <Box component='div'>
             <Grid container justify='center'>
                 <Box component='form' className={classes.form}>
-                    <Typography variant="h5" style={{color: 'tomato', textAlign: ' center', textTransform: 'uppercase'}}>
-                        Contactame...
+                    <Typography variant="h5" style={{ color: '#57C4A8', textShadow: '2px 2px 2px #1E2328', textAlign: ' center', textTransform: 'uppercase' }}>
+                        Contactame
                     </Typography>
                     <InputField
                         fullWidth={true}
@@ -88,7 +88,7 @@ function sendEmail(e) {                                                   //-
                         margin='dense'
                         inputProps={{ style: { color: 'white' } }}
                         size='medium'
-                        onChange={(event) => setUser({...user, user_name: event.target.value })}
+                        onChange={(event) => setUser({ ...user, user_name: event.target.value })}
                         required
                     />
                     <br />
@@ -99,7 +99,7 @@ function sendEmail(e) {                                                   //-
                         margin='dense'
                         inputProps={{ style: { color: 'white' } }}
                         size='medium'
-                        onChange={(event) => setUser({...user, user_email: event.target.value })}
+                        onChange={(event) => setUser({ ...user, user_email: event.target.value })}
                         required
                     />
                     <br />
@@ -120,12 +120,12 @@ function sendEmail(e) {                                                   //-
                         multiline
                         margin='dense'
                         inputProps={{ style: { color: 'white' } }}
-                        onChange={(event) => setUser({...user, message: event.target.value })}
+                        onChange={(event) => setUser({ ...user, message: event.target.value })}
                         size='medium'
                     />
-                    <br/>
-                    <Button variant='outlined' fullWidth={true} endIcon={<SendIcon/>}
-                    className={classes.button} onClick={sendEmail}>
+                    <br />
+                    <Button variant='outlined' fullWidth={true} endIcon={<SendIcon />}
+                        className={classes.button} onClick={sendEmail}>
                         Send
                     </Button>
                 </Box>

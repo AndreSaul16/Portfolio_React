@@ -30,7 +30,7 @@ import Footer from './Footer'
 const useStyles = makeStyles(theme => ({
     menuSliderContainer: {
         width: 250,
-        background: '#511',
+        background: '#1E2328',
         height: '100%'
     },
     avatar: {
@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
         height: theme.spacing(13)
     },
     listItem: {
-        color: 'tan'
+        color: '#9DAAAF'
     }
 }));
 
@@ -83,7 +83,7 @@ const Navbar = () => {
             <Divider />
             <List>
                 {menuItems.map((lsItem, key) => (
-                    <ListItem button keu={key} component={Link} to={lsItem.listPath}>
+                    <ListItem button key={key} component={Link} to={lsItem.listPath}>
                         <ListItemIcon className={classes.listItem}>{lsItem.listIcon}</ListItemIcon>
                         <ListItemText className={classes.listItem} primary={lsItem.listText} />
                     </ListItem>
@@ -95,12 +95,12 @@ const Navbar = () => {
     return (
         <>
             <Box component="nav">
-                <AppBar position='static' style={{ background: '#222' }}>
+                <AppBar position='static' style={{ background: '#1E2328' }}>
                     <Toolbar>
                         <IconButton onClick={toggleSlider('right', true)}>
-                            <MenuIcon style={{ color: 'tomato' }} />
+                            <MenuIcon style={{ color: '#57C4A8' }} />
                         </IconButton>
-                        <Typography variant="h5" style={{ color: 'tan' }}>
+                        <Typography variant="h5" style={{ color: 'white' }}>
                             Portafolio
                     </Typography>
                     <MobilRightMenuSlider open={state.right} anchor='left' onClose={toggleSlider('right', false)}>

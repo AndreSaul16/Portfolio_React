@@ -19,7 +19,7 @@ const Home = () => {
                 params={{
                     particles: {
                         number: {
-                            value: 65,
+                            value: 70,
                             density: {
                                 enable: true,
                                 value_area: 900
@@ -29,7 +29,7 @@ const Home = () => {
                             type: 'circle',
                             strole: {
                                 width: 1,
-                                color: 'tomato'
+                                color: 'white'
                             }
                         },
                         size:{
