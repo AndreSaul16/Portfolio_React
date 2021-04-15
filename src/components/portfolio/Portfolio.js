@@ -12,6 +12,11 @@ import {
     Typography,
     CardActionArea
 } from '@material-ui/core'
+import java from '../../images/java.png';
+import csharp from '../../images/c#.png';
+import javascrtipt from '../../images/javascript.png';
+import htmlCss from '../../images/hmlt-css.png';
+
 
 const useStyles = makeStyles({
     mainContainer: {
@@ -38,25 +43,25 @@ const Portfolio = () => {
                                 component='img'
                                 alt='Project Java'
                                 height='140'
-                                image='https://github.com/AndreSaul16/Portfolio_React/blob/2800efda8c5b52018d3110f8b06e996b80bada48/src/images/java.png' />
+                                image={java} />
                         </CardActionArea>
                         <CardContent>
-                            <Typography gutterBottom variant='h5' align='center' >
+                            <Typography gutterBottom variant='h5' style={{color: '#57C4A8'}} align='center' >
                                 Java
                             </Typography>
-                            <Typography gutterBottom variant='h6'  color='textSecondary' align='center' >
-                                Cillum tempor do deserunt proident. Irure duis et sit esse labore culpa eu nostrud consectetur Lorem et enim eu.
+                            <Typography gutterBottom variant='h6' color='textSecondary' align='center' >
+                                Un tetris en java fx, con sistema de puntuacion y bloques de varios colores.
                             </Typography>
-                            <Button size='small' color='primary'>
-                                Share
+                            <Button size='small' style={{color: '#004AAD'}}>
+                                COMPARTIR
                                 </Button>
-                            <Button size='small' color='primary'>
-                                Live Demo
+                            <Button size='small' style={{color: '#004AAD'}} href='/java'>
+                                VER EN GITHUB
                                 </Button>
                         </CardContent>
                     </Card>
                 </Grid>
-                {/*Project Java 2 */}
+                {/*Project javascript 2 */}
                 <Grid item xs={12} sm={8} md={6}>
                     <Card className={classes.cardContainer}>
                         <CardActionArea>
@@ -64,25 +69,25 @@ const Portfolio = () => {
                                 component='img'
                                 alt='Project Java'
                                 height='140'
-                                image='https://picsum.photos/200/300' />
+                                image={javascrtipt} />
                         </CardActionArea>
                         <CardContent>
-                            <Typography gutterBottom variant='h5' align='center' >
+                            <Typography gutterBottom variant='h5' style={{color: '#57C4A8'}} align='center' >
                                 JavaScript
                             </Typography>
-                            <Typography gutterBottom variant='h6'  color='textSecondary' align='center' >
-                                Cillum tempor do deserunt proident. Irure duis et sit esse labore culpa eu nostrud consectetur Lorem et enim eu.
+                            <Typography gutterBottom variant='h6' color='textSecondary' align='center' >
+                                El codigo del portafolio en el que estas navegando se encuetra en este repositorio de github, utilice react, mi libreria favoria de javascript y material-ui para los estilos
                             </Typography>
-                            <Button size='small' color='primary'>
-                                Share
+                            <Button size='small' style={{color: '#004AAD'}}>
+                                COMPARTIR
                                 </Button>
-                            <Button size='small' color='primary'>
-                                Live Demo
+                            <Button size='small' style={{color: '#004AAD'}} href='/javascript'>
+                                VER EN GITHUB
                                 </Button>
                         </CardContent>
                     </Card>
                 </Grid>
-                {/*Project Java 3 */}
+                {/*Project c# 3 */}
                 <Grid item xs={12} sm={8} md={6}>
                     <Card className={classes.cardContainer}>
                         <CardActionArea>
@@ -90,25 +95,25 @@ const Portfolio = () => {
                                 component='img'
                                 alt='Project Java'
                                 height='140'
-                                image='https://picsum.photos/200/300' />
+                                image={csharp} />
                         </CardActionArea>
                         <CardContent>
-                            <Typography gutterBottom variant='h5' align='center' >
+                            <Typography gutterBottom variant='h5' style={{color: '#57C4A8'}} align='center' >
                                 C#
                             </Typography>
-                            <Typography gutterBottom variant='h6'  color='textSecondary' align='center' >
-                                Cillum tempor do deserunt proident. Irure duis et sit esse labore culpa eu nostrud consectetur Lorem et enim eu.
+                            <Typography gutterBottom variant='h6' color='textSecondary' align='center' >
+                                Una app de consola construida con .net framework, que nos permite hacer crud sobre una base de datos.
                             </Typography>
-                            <Button size='small' color='primary'>
-                                Share
+                            <Button size='small' style={{color: '#004AAD'}}>
+                                COMPARTIR
                                 </Button>
-                            <Button size='small' color='primary'>
-                                Live Demo
+                            <Button size='small' style={{color: '#004AAD'}} href='/csharp'>
+                                VER EN GITHUB
                                 </Button>
                         </CardContent>
                     </Card>
                 </Grid>
-                {/*Project Java 4 */}
+                {/*Project HTML / CSS 4 */}
                 <Grid item xs={12} sm={8} md={6}>
                     <Card className={classes.cardContainer}>
                         <CardActionArea>
@@ -116,20 +121,20 @@ const Portfolio = () => {
                                 component='img'
                                 alt='Project Java'
                                 height='140'
-                                image='https://picsum.photos/200/300' />
+                                image={htmlCss} />
                         </CardActionArea>
                         <CardContent>
-                            <Typography gutterBottom variant='h5' align='center' >
+                            <Typography gutterBottom variant='h5' style={{color: '#57C4A8'}} align='center' >
                                 HTML / CSS
                             </Typography>
                             <Typography gutterBottom variant='h6' color='textSecondary' align='center' >
-                                Cillum tempor do deserunt proident. Irure duis et sit esse labore culpa eu nostrud consectetur Lorem et enim eu.
+                                Una pequeña pagina web creada solamente con html y css.
                             </Typography>
-                            <Button size='small' color='primary'>
-                                Share
+                            <Button size='small' style={{color: '#004AAD'}} color='primary'>
+                                COMPARTIR
                                 </Button>
-                            <Button size='small' color='primary'>
-                                Live Demo
+                            <Button size='small' style={{color: '#004AAD'}} color='primary' href='/html-css'>
+                                VER EN GITHUB
                                 </Button>
                         </CardContent>
                     </Card>

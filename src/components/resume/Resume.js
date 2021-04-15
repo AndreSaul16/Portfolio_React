@@ -8,7 +8,7 @@ import timelineElements from './TimelineElements';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../../App.css';
-import Saul from '../../Saul.png'
+import Saul from '../../images/Saul.png'
 
 const useStyles = makeStyles(theme => ({
     CV: {
