@@ -38,7 +38,7 @@ const Portfolio = () => {
                                 component='img'
                                 alt='Project Java'
                                 height='140'
-                                image='https://picsum.photos/200/300' />
+                                image='https://github.com/AndreSaul16/Portfolio_React/blob/2800efda8c5b52018d3110f8b06e996b80bada48/src/images/java.png' />
                         </CardActionArea>
                         <CardContent>
                             <Typography gutterBottom variant='h5' align='center' >

@@ -5,7 +5,6 @@ import './App.css';
 import Contacto from './components/contact/Contacto';
 import Home from './components/Index';
 import Portfolio from './components/portfolio/Portfolio';
-import resum2 from './components/resume/resum2';
 import Resume from './components/resume/Resume';
 
 function App() {

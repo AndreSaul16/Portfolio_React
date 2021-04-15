@@ -21,27 +21,30 @@ const useStyles = makeStyles(theme => ({
     },
     button: {
         marginTop: '1rem',
-        color: 'tomato',
-        borderColor: 'tomato'
+        color: '#57C4A8',
+        borderColor: '#57C4A8',
+        textShadow: '2px 2px 2px #1E2328',
+        boxShadow: '2px 2px 2px #1E2328'
     }
 }))
 const InputField = withStyles({
     root: {
         '& label.Mui-focused': {
-            color: 'tomato',
+            color: '#57C4A8'
         },
         '& label': {
-            color: 'tan',
+            color: '#bfd2d9',
+            textShadow: '1px 1px 1px #1E2328'
         },
         '& .MuiOutlinedInput-root': {
-            '& filedset': {
-                borderColor: 'tan'
+            '& fieldset': {
+                borderColor: '#57C4A8'
             },
             '&:hover fieldset': {
-                borderColor: 'tan'
+                borderColor: '#57C4A8'
             },
             '&.Mui-focused fieldset': {
-                borderColor: 'tan'
+                borderColor: '#bfd2d9'
             }
         }
     },
@@ -52,23 +55,26 @@ const InputField = withStyles({
 function Contact() {
     const classes = useStyles();
     const [user, setUser] = React.useState({
-        user_name: '',
-        message: '',
-        user_email: '',
-        company_name: ''
+        user_name: null,
+        message: null,
+        user_email: null,
+        company_name: null
     })
 
 
     //------------> FUNCTION FOR SEND <---------
     let sendEmail = (e) => {
         e.preventDefault();
-
-        emailjs.send('service_o0njyq4', 'template_2rciqwi', user, 'user_n3iAFY4p6zW79Y8e53HSo')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+        if (user.user_name && user.user_email) {
+            emailjs.send('service_o0njyq4', 'template_2rciqwi', user, 'user_n3iAFY4p6zW79Y8e53HSo')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
+                });
+        }else{
+            console.log("Internal Error")
+        }
     }
 
 

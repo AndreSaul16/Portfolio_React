@@ -40,7 +40,10 @@ const useStyles = makeStyles(theme => ({
         height: theme.spacing(13)
     },
     listItem: {
-        color: '#9DAAAF'
+        color: '#9DAAAF',
+        '&:hover': {
+            color: '#57C4A8',
+        }
     }
 }));
 
